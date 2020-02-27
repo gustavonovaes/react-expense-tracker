@@ -1,9 +1,8 @@
 import React from 'react';
-
-import useGlobalState from '../hooks/useGlobalState';
+import { useSelector } from 'react-redux';
 
 function Balance() {
-  const { transactions } = useGlobalState();
+  const { transactions } = useSelector(state => state);
 
   const totalAmount = transactions.reduce((total, transaction) => {
     return total + transaction.amount;

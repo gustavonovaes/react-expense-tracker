@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import { generateID } from '../utils';
-
-import useGlobalState from '../hooks/useGlobalState';
+import { addTransaction } from '../store';
 
 function AddTransaction() {
   const [text, setText] = useState('');
@@ -17,7 +17,7 @@ function AddTransaction() {
     setAmount(e.target.value);
   }
 
-  const { addTransaction } = useGlobalState();
+  const dispatch = useDispatch();
 
   function onSubmit(e) {
     e.preventDefault();
@@ -28,7 +28,7 @@ function AddTransaction() {
       amount: Number(amount)
     };
 
-    addTransaction(newTransaction);
+    dispatch(addTransaction(newTransaction));
   }
 
   return (

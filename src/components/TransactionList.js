@@ -1,12 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import Transaction from "./Transaction";
-import useGlobalState from '../hooks/useGlobalState';
 
 function TransactionList() {
+  const { transactions } = useSelector(state => state);
 
-  const { transactions } = useGlobalState();
   return (
     <Container>
       <h3>History</h3>

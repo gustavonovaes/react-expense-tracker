@@ -1,17 +1,18 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
-import useGlobalState from '../hooks/useGlobalState';
+import { deleteTransaction } from '../store';
 
 function Transaction({ id, text, amount }) {
   const isNegative = amount < 0;
   const sign = isNegative ? '-' : '+';
   const value = Math.abs(amount);
 
-  const { deleteTransaction } = useGlobalState();
+  const dispatch = useDispatch();
 
   function handleDelete() {
-    deleteTransaction(id)
+    dispatch(deleteTransaction(id));
   }
 
   return (

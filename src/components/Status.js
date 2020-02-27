@@ -1,10 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components'
 
-import useGlobalState from '../hooks/useGlobalState';
-
 function Status() {
-  const { transactions } = useGlobalState();
+  const { transactions } = useSelector(state => state);
 
   const incomes = transactions.filter(t => t.amount > 0);
   const expenses = transactions.filter(t => t.amount < 0);
