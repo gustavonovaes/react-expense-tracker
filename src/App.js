@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+
+import Balance from './components/Balance';
+import Status from './components/Status';
+import TransactionList from './components/TransactionList';
+import AddTransaction from './components/AddTransaction';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <h1>Expense tracker</h1>
+
+      <Balance />
+
+      <Status />
+
+      <TransactionList />
+
+      <AddTransaction />
+    </Container>
   );
 }
+
+const Container = styled.main`
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  padding: var(--double-gap);
+
+  @media (min-width: 700px)  {
+    margin: var(--double-gap) auto;
+    width: 50vw;
+    max-width: var(--max-width);
+  }
+`
 
 export default App;
