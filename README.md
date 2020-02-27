@@ -5,7 +5,9 @@ A expense tracker app made with React + Styled Components + RTK
 ```sh
 git clone https://github.com/gustavonovaes/react-expense-tracker.git
 cd react-expense-tracker
-yarn start
+
+# npm i && npm run start
+yarn && yarn start 
 ```
 
 ## Preview
