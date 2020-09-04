@@ -1,7 +1,7 @@
 # react-expense-tracker
 A expense tracker app made with React + Styled Components + RTK
 
-## Trying
+## Try
 ```sh
 git clone https://github.com/gustavonovaes/react-expense-tracker.git
 cd react-expense-tracker
